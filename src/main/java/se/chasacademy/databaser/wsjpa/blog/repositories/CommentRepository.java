@@ -8,5 +8,5 @@ import java.util.List;
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     //- hämta kommentarer per inlägg
-    List<Comment> findAllByPostId(int postId);
+    List<Comment> findByPostPostId(Long postId);
 }
