@@ -3,6 +3,7 @@ package se.chasacademy.databaser.wsjpa.blog.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -61,4 +62,13 @@ public class Post {
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
+
+    // Relation: En Post kan ha flera kommentarer
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private List<Comment> comments;
+
+    // Getter & Setter för kommentarer
+    public List<Comment> getComments() { return comments; }
+    public void setComments(List<Comment> comments) { this.comments = comments; }
+
 }
