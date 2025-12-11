@@ -9,17 +9,17 @@ import java.util.List;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int postId;
+    private Long postId;
     @Column
     private String title, posttext, author;
     @Column
     private LocalDateTime publishDate, createDate;
 
-    public int getPostId() {
+    public Long getPostId() {
         return postId;
     }
 
-    public void setPostId(int postId) {
+    public void setPostId(Long postId) {
         this.postId = postId;
     }
 
