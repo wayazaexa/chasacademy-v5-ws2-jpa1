@@ -14,9 +14,9 @@ public class PostService {
     private final PostRepository postRepository;
     private final CommentRepository commentRepository;
 
-    public PostService(PostRepository postRepository) {
+    public PostService(PostRepository postRepository, CommentRepository commentRepository) {
         this.postRepository = postRepository;
-        this.commentRepository = new CommentRepository();
+        this.commentRepository = commentRepository;
     }
 
     public List<Post> getPublishedPosts() {
